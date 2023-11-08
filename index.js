@@ -45,7 +45,7 @@ function calculateDaysLeft(expiryDate) {
         console.log("Programın lisans süresi doldu. Yeni lisans alınız.");
         process.exit();
     } else {
-        console.log(`Programın kullanım süresi sona ermesine ${daysLeft} gün kaldı.`);
+        console.log(`Programın kullanım süresi sona ermesine ${daysLeft} gün kaldı. Güncel Sürüm geldi`);
     }
 
     const url = await askQuestion('Lütfen ziyaret edilecek URL giriniz: ');
