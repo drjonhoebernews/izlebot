@@ -13,7 +13,10 @@ function askQuestion(query) {
 }
 
 async function openPage(url) {
-    const browser = await puppeteer.launch({ headless: true }); // Tarayıcı penceresini göster
+    const browser = await puppeteer.launch({
+        headless: true,
+        args: ['--no-sandbox', '--disable-setuid-sandbox'], // Additional arguments for running as root
+    });
     const page = await browser.newPage();
     await page.goto(url);
     await page.waitForTimeout(10000); // 10 saniye beklet
